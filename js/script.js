@@ -25,26 +25,26 @@ $(document).ready(function() {
             icon = response.weather[0].icon;
             $(".temp").html(Fahrenheit + "°F");
             $(".main").html(response.weather[0].main);
-            $(".icon").html("<img src=\"https://cors-anywhere.herokuapp.com/http://openweathermap.org/img/w/" + icon + ".png\" alt = \"icon\">" + "</img>");
+            $(".icon").html("<img src=\"http://openweathermap.org/img/w/" + icon + ".png\" alt = \"icon\">" + "</img>");
             //Switch statement that changes background depending on the weather icon, more specific weather backgrounds from weather condition codes could be used as well
             switch (icon) {
                 //Clear Sky-Day
                 case "01d":
-                    $(".container-fluid").css("background-image", "url(https://cors-anywhere.herokuapp.com/http://www.esquireglobalcrossings.com/files/2014/10/180467131.jpg)");
+                    $(".container-fluid").css("background-image", "url(http://www.esquireglobalcrossings.com/files/2014/10/180467131.jpg)");
 
                     break;
                     //Clear Sky-Night
                 case "01n":
-                    $(".container-fluid").css("background-image", "url(https://cors-anywhere.herokuapp.com/http://wilddamntexan.com/kids/nightsky_newton_120126.jpg)");
+                    $(".container-fluid").css("background-image", "url(http://wilddamntexan.com/kids/nightsky_newton_120126.jpg)");
                     break;
                     //Few Clouds-Day
                 case "02d":
-                    $(".container-fluid").css("background-image", "url(https://cors-anywhere.herokuapp.com/http://susanstilwell.com/wp-content/uploads/2011/10/dreamstimefree_20823097.jpg)");
+                    $(".container-fluid").css("background-image", "url(http://susanstilwell.com/wp-content/uploads/2011/10/dreamstimefree_20823097.jpg)");
 
                     break;
                     //Few Clouds-Night
                 case "02n":
-                    $(".container-fluid").css("background-image", "url(https://cors-anywhere.herokuapp.com/http://1.bp.blogspot.com/-Amkkl1IIygk/UrPq6cPscVI/AAAAAAAABx4/PIL86DTtV5o/s1600/full+moon+and+whispy+clouds+lyndi+thompson+maple+valley.jpg)");
+                    $(".container-fluid").css("background-image", "url(http://1.bp.blogspot.com/-Amkkl1IIygk/UrPq6cPscVI/AAAAAAAABx4/PIL86DTtV5o/s1600/full+moon+and+whispy+clouds+lyndi+thompson+maple+valley.jpg)");
 
                     break;
                     //Scattered Clouds-Day
@@ -53,7 +53,7 @@ $(document).ready(function() {
                     break;
                     //Scattered Clouds-Night
                 case "03n":
-                    $(".container-fluid").css("background-image", "url(https://cors-anywhere.herokuapp.com/http://il8.picdn.net/shutterstock/videos/9682532/thumb/1.jpg)");
+                    $(".container-fluid").css("background-image", "url(http://il8.picdn.net/shutterstock/videos/9682532/thumb/1.jpg)");
                     break;
                     //Broken Clouds-Day
                 case "04d":
@@ -61,7 +61,7 @@ $(document).ready(function() {
                     break;
                     //Broken Clouds-Night
                 case "04n":
-                    $(".container-fluid").css("background-image", "url(https://cors-anywhere.herokuapp.com/http://3.bp.blogspot.com/-oHQAaVLuOI4/UfEtlvesXZI/AAAAAAAAWbU/YRKlIbUdNh8/s1600/1+moon.JPG)");
+                    $(".container-fluid").css("background-image", "url(http://3.bp.blogspot.com/-oHQAaVLuOI4/UfEtlvesXZI/AAAAAAAAWbU/YRKlIbUdNh8/s1600/1+moon.JPG)");
                     break;
                     //Shower Rain-Day
                 case "09d", "10d":
@@ -69,7 +69,7 @@ $(document).ready(function() {
                     break;
                     //Shower Rain,Rain-Night
                 case "09n", "10n":
-                    $(".container-fluid").css("background-image", "url(https://cors-anywhere.herokuapp.com/http://images.astronet.ru/pubd/2007/08/12/0001223069/perseids_bruenjes.jpg)");
+                    $(".container-fluid").css("background-image", "url(http://images.astronet.ru/pubd/2007/08/12/0001223069/perseids_bruenjes.jpg)");
                     break;
 
                     //Thunderstorm
@@ -79,19 +79,19 @@ $(document).ready(function() {
 
                     //Snow-Day
                 case "13d":
-                    $(".container-fluid").css("background-image", "url(https://cors-anywhere.herokuapp.com/http://weatherpiccies.com/2015/FallSnowDayFlashOnMelki.jpg)");
+                    $(".container-fluid").css("background-image", "url(http://weatherpiccies.com/2015/FallSnowDayFlashOnMelki.jpg)");
                     break;
                     //Snow-Night
                 case "13n":
-                    $(".container-fluid").css("background-image", "url(https://cors-anywhere.herokuapp.com/http://img08.deviantart.net/8993/i/2003/8/3/6/snow_fall_at_night.jpg)");
+                    $(".container-fluid").css("background-image", "url(http://img08.deviantart.net/8993/i/2003/8/3/6/snow_fall_at_night.jpg)");
                     break;
                     //Mist-Day
                 case "50d":
-                    $(".container-fluid").css("background-image", "url(https://cors-anywhere.herokuapp.com/http://4.bp.blogspot.com/-jELkQWL9RYU/UZQBGCzWbiI/AAAAAAAAA-8/aE-M6s89FiU/s1600/mist.jpg)");
+                    $(".container-fluid").css("background-image", "url(http://4.bp.blogspot.com/-jELkQWL9RYU/UZQBGCzWbiI/AAAAAAAAA-8/aE-M6s89FiU/s1600/mist.jpg)");
                     break;
                     //Mist-Night
                 case "50n":
-                    $(".container-fluid").css("background-image", "url(https://cors-anywhere.herokuapp.com/http://media-cache-ec0.pinimg.com/736x/17/c4/db/17c4db2aa8188fbd219cd8b39d82c55c.jpg)");
+                    $(".container-fluid").css("background-image", "url(http://media-cache-ec0.pinimg.com/736x/17/c4/db/17c4db2aa8188fbd219cd8b39d82c55c.jpg)");
                     break;
 
                 default:

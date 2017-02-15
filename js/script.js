@@ -5,7 +5,7 @@ $(document).ready(function() {
     var icon;
     //Using ipinfo API to get the location information from the user which will then be used with the openweathermap API to gather weather information
     function getLocation() {
-        $.getJSON("http://ipinfo.io", function(response) {
+        $.getJSON("https://ipinfo.io", function(response) {
             var cc = response.country;
             var city = response.city;
             var state = response.region;

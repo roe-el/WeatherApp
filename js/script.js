@@ -10,7 +10,7 @@ $(document).ready(function() {
             var city = response.city;
             var state = response.region;
             $(".city").html(city + "," + state);
-            var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + cc + "&APPID=1d0e324c03cd19ecf0abf20ac2708666";
+            var url = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + cc + "&APPID=1d0e324c03cd19ecf0abf20ac2708666";
 
             getWeather(url);
 

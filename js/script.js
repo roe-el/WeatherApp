@@ -3,28 +3,40 @@ $(document).ready(function() {
     var Fahrenheit;
     var Celsius;
     var icon;
-    //Using ipinfo API to get the location information from the user which will then be used with the openweathermap API to gather weather information
-    function getLocation() {
-        $.getJSON("https://ipinfo.io", function(response) {
-            var cc = response.country;
-            var city = response.city;
-            var state = response.region;
-            $(".city").html(city + "," + state);
-            var url = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + cc + "&APPID=1d0e324c03cd19ecf0abf20ac2708666";
+    //Using browser data to get the location information from the user which will then be used with the openweathermap API to gather weather information
+    
+   function updateTemp() {
+  var lat, lon;
+  
+  navigator.geolocation.getCurrentPosition(function(location) {
+    lat = location.coords.latitude;
+    lon = location.coords.longitude;  
+    var url = "https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&APPID=1d0e324c03cd19ecf0abf20ac2708666";
+    var xhr = new XMLHttpRequest();
+    xhr.responseType = "json";
+    xhr.open("GET", url, true);
+    xhr.send();
+    xhr.onreadystatechange = function() {  
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        console.log(xhr.response);
+        getWeather(url);
+      }
+    } 
+  })
 
-            getWeather(url);
-
-        });
-    }
-    //Here the location info from getLocation is used to obtain weather information which is then displayed for the user in text and background image
+}
+    
+     
+    //Here the location info from updateTemp is used to obtain weather information which is then displayed for the user in text and background image
     function getWeather(url) {
         $.getJSON(url, function(response) {
+            $(".city").html(response.name);
             Kelvin = Math.round(response.main.temp);
             Fahrenheit = Math.round((9 / 5) * (Kelvin - 273) + 32);
             Celsius = Kelvin - 273;
             icon = response.weather[0].icon;
             $(".temp").html(Fahrenheit + "°F");
-            $(".main").html(response.weather[0].main);
+            $(".main").html(response.weather[0].description);
             $(".icon").html("<img src=\"http://openweathermap.org/img/w/" + icon + ".png\" alt = \"icon\">" + "</img>");
             //Switch statement that changes background depending on the weather icon, more specific weather backgrounds from weather condition codes could be used as well
             switch (icon) {
@@ -102,7 +114,7 @@ $(document).ready(function() {
             }
         });
     }
-    getLocation();
+    updateTemp();
     //Converting the temp from Fahrenheit to Celsius and back
     var convert = true;
     $(".btn").click(function() {

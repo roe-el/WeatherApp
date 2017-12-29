@@ -9,32 +9,30 @@
 .jumbotron {
     margin: auto;
     margin-top: 8%;
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgba(255, 255, 255, .7);
     width: 50%;
     color: Black;
     font-family: 'Bahiana', cursive;
 }
 
 .title {
-    font-size: 46px;
+    font-size: 3em;
 }
 
 .city,
 .main,
-.btn,
 .temp {
-    font-size: 28px;
+    font-size: 1.5em;
 }
 
 .btn {
+    font-size: 1.2em;
     margin-bottom: 16px;
 }
 
-.gitdiv {
-    padding-top: 8px;
-}
-
-.git {
-    color: blue;
-    font-family: Arial;
+.btn,
+.jumbotron {
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
 }
